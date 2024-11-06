@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+
+
+{% block content %}
+    
+
+<form method="post" class="fancy_form" >
+    <h1 style="color: rgb(0, 123, 255); margin-left: 125px;">Login</h1>
+    <br>
+    <label>Email:</label>
+    <input type="email" value = "{{credentials.email}}" name="email" class="form-control" required minlength="2" maxlength="30">
+    <br>
+    <label>Password:</label>
+    <input type="password" value = "{{credentials.password}}" name="password" class="form-control" required minlength="2" maxlength="20">
+    <br>
+    
+    <button class ="btn btn-primary w-100">login</button>
+    <br><br>
+    <p style="margin-left: 20px;">New here ? <a href="{{url_for('auth_view.register')}}">Sign up</a> and begin your journy! </p>
+    
+</form>
+    
+{% endblock content %}

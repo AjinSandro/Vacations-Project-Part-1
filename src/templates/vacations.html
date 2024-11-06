@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+
+
+{% set current_user = session.get("current_user") %}
+{% block content %}
+<div class="box">
+    {%for v in vacations%}
+    <div class="row">
+        <div class="column">
+            <div class="showcase">
+                <div class="travel-card">
+                    <div class="image">
+                        <img src="{{ url_for('vacations_view.get_image',vacation_picture_file =( v.vacation_picture_file if v.vacation_picture_file else '---'))}}">
+                    </div>
+                    <div class="content">
+                        
+                        <label class="date"><i class="fa fa-calendar" aria-hidden="true"></i> {{v.vacation_date_start}}
+                            - {{v.vacation_date_end}}</label>
+                        <div class="country-description">
+                            <p7 class ="p7">{{v.country_name}}</p7>
+                        </div>
+                        <p class="p">{{v.vacation_details}}</p> 
+
+                        {% if current_user.role_type == user %}
+                        <div class="price">
+                            <button class="button">${{v.vacation_price}}</button>
+                        </div>
+                        {% endif %}
+                        {% if current_user.role_type == admin %}
+                            <div class="price2">
+                                <a class="button" href="{{ url_for('vacations_view.edit', vacation_id=v.vacation_id) }}" ><i class="fa fa-pencil" style="font-size:24px"></i> Edit</a>
+                                
+                                <a class="button" onclick="confirmDelete()" href="{{ url_for('vacations_view.delete', vacation_id = v.vacation_id) }}"><i class="fa fa-trash-o" style="font-size:24px"></i> Delete</a>
+                            </div>
+                        {% endif %}
+                    </div>
+                    {% if current_user.role_type == user %}
+                    <button class="button-favorite like-button {% if v.vacation_id in likes %} liked {% endif %}" data-vacation_id="{{ v.vacation_id }}">
+                    <span class="countLikes">{{v.LikeCount}}</span>
+                    {% if v.vacation_id in likes %}
+                    <i class="fas fa-heart-o fa-heart icon-spacing"></i>
+                    {% else %}
+                    <i class="far fa-heart-o icon-spacing"></i>
+                    {% endif %}
+                    </button>
+                    {% endif %}
+                    
+
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+<footer class="tm-footer icon-spacing3">
+    <span>Copyright &copy; 2024 Beach Vibes</span>
+</footer>
+{% endblock content %}

@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<form method="post" class="fancy_form" enctype="multipart/form-data">
+    <input type="hidden" value="{{vacation.vacation_id}}"  name="vacation_id" class="form-control">
+    <br><br>
+    <label>Insert country by ID here:</label>
+    <input type="numbers" value="{{vacation.country_id}}" name="country_id" class="form-control" >
+            Scroll down for country by ID:
+        <select class="form-control" name="Countries" required>
+                <option>  1 - United States of America</option>
+                <option>  2 - France</option>
+                <option>  3 - Croatia</option>
+                <option>  4 - Greece</option>
+                <option>  5 - Spain</option>
+                <option>  6 - Maldives</option>
+                <option>  7 - Brazil</option>
+                <option>  8 - Thailand</option>
+                <option>  9 - Bahamas</option>
+                <option> 10 - Seychelle</option>
+                <option> 11 - Australia</option>
+                <option> 12 - Israel</option>
+        </select>
+    <br>
+    <label>Description:</label>
+    <textarea rows="8" value="{{vacation.vacation_details}}" name="vacation_details" class="form-control rounded-0"  required minlength="1" maxlength="30">{{vacation.vacation_details}}</textarea>
+    <br>
+    <label>Start date:</label>
+    <input type="date" value="{{vacation.vacation_date_start}}" name="vacation_date_start" class="form-control" required >
+    <br>
+    <label>End date:</label>
+    <input type="date" value="{{vacation.vacation_date_end}}" name="vacation_date_end" class="form-control" required >
+    <br>
+    <label>Price:</label>
+    <input type="number" value="{{vacation.vacation_price}}" name="vacation_price" class="form-control" required min="1" max="10000">
+    <br>
+    <label>Location Image:</label>
+    <input type="file"  name="image" accept="image/*" class="form-control">
+    
+    <button class ="btn btn-primary w-100">Update</button>
+    <br>
+</form>    
+<br>
+<br>
+{% endblock content %}
+

@@ -1,0 +1,105 @@
+{% extends "layout.html" %}
+
+
+{% block content %}
+ 
+        
+        <div id="about" class="popup mfp-with-anim mfp-hide tm-bg-gray">
+            <br>
+            <h2 class="tm-about-col tm-mb-40 tm-page-title">
+                 <span class="highlight-beach">BEACH <span class="highlight-vibes">vibes</span></span>
+            </h2>
+            <div class="tm-row tm-about-row">
+                <div class="tm-col tm-about-col tm-about-left">                    
+                    <img src="static/images/about.jpg" alt="Image" class="tm-mb-30">
+                    <p class="tm-mb-40">
+                        Beach Vibes is your ultimate travel partner for discovering the world’s most stunning beach vacations at unbeatable prices. We specialize in finding exceptional beach destinations with top-quality hotels that won’t break the bank. Our expert team scours the globe to bring you the best deals on beachfront getaways, ensuring a perfect blend of affordability and luxury. Whether you’re dreaming of a serene escape or an adventurous seaside retreat, Beach Vibes is dedicated to making your ideal beach vacation a reality. Let us transform your travel dreams into unforgettable experiences with the best value and exceptional quality.
+                    </p>
+                    
+                </div>
+                   
+            </div>
+        </div>
+
+        <div id="contact" class="popup mfp-with-anim mfp-hide tm-bg-gray">
+            <hr>
+            <h2 class="tm-contact-col tm-color-primary tm-page-title tm-mb-40">Contact Us</h2>
+            <div class="tm-row tm-contact-row">
+                <div class="tm-col tm-contact-col">
+                
+                <!-- Do you need a working HTML contact form?
+                    Please visit https://templatemo.com/contact page -->
+                    
+                    <form id="contact-form" action="{{ url_for('about_view.submitTicket') }}" method="POST" class="tm-contact-form">
+                        <div class="form-group">
+                            <input type="text" name="name" class="form-control rounded-0" placeholder="Full Name" required />
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" class="form-control rounded-0" placeholder="Email" required />
+                        </div>
+                        <div class="form-group">
+                            <select class="form-control" id="contact-select" name="inquiry" required>
+                                <option value="support">Customer support</option>
+                                <option value="partnership">Partnership inquiries</option>
+                                <option value="media">Media inquiries</option>
+                                <option value="business">Business inquiries</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea rows="8" name="message" class="form-control rounded-0" placeholder="Message" required=></textarea>
+                        </div>
+                        
+                        <div class="form-group tm-text-center">
+                            <button onclick="TicketSubmissionAlert()" type="submit" class="tm-btn tm-btn-primary" >Send it now</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="tm-col tm-contact-col tm-contact-col-r">
+                    <!-- Map -->
+                    <div class="mapouter tm-mb-40">
+                        
+                        <hr>
+                        <br>
+                        <div class="gmap_canvas">
+                            <iframe width="100%" height="520" id="gmap_canvas"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3381.1755766576284!2d34.785012736028825!3d32.06449958523203!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151d4b70c925e5ed%3A0x9e629a46351e04c3!2sJohn%20Bryce%20Training!5e0!3m2!1sen!2sil!4v1722651108878!5m2!1sen!2sil" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                                frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+
+                    <!-- Address -->
+                    <address class="tm-mb-40">
+                        Khoma u-Migdal St 29, Tel Aviv-Yafo, 6777129<br>
+                        <hr>
+
+                        If you have any question's, feel free to contact us.
+                    </address>
+                    
+                    <!-- Links -->
+                    <ul class="tm-contact-links">
+                        <li>
+                            <a href="tel:0100200340">
+                                <i class="fas fa-phone tm-contact-link-icon"></i>
+                                Tel: 03-1381776
+                            </a>
+                        </li>
+                        <li>
+                            <a href="mailto:info@company.com">
+                                <i class="fas fa-at tm-contact-link-icon"></i>
+                                Email: BeachVibes@gmail.com
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <footer class="tm-footer icon-spacing3">
+            <span>Copyright &copy; 2024 Beach Vibes</span>
+        </footer>
+    </div>
+    
+{% endblock content %}

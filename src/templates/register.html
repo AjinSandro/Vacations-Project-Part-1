@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+
+{% block content %}
+
+<form method="post" class="fancy_form" >
+    <h2 style="color: rgb(0, 123, 255); margin-left: 125px;">Register</h2>
+    <br>
+    <br>
+    <label>First Name:</label>
+    <input type="text" name="firstname" value = "{{user.firstname}}" class="form-control" required minlength="2" maxlength="20">
+    <br>
+    <label>Last Name:</label>
+    <input type="text" name="lastname" value = "{{user.lastname}}" class="form-control" required minlength="2" maxlength="20">
+    <br>
+    <label>Email:</label>
+    <input type="email" name="email" value = "{{user.email}}" class="form-control" required minlength="2" maxlength="30">
+    <br>
+    <label>Password:</label>
+    <input type="password" name="password" value = "{{user.password}}" class="form-control" required minlength="2" maxlength="20">
+    <br>
+    
+    <button onclick="AlertRegistration()" class ="btn btn-primary w-100" href="{{url_for('vacations_view.list')}}">Register</button>
+    
+    <br><br>
+    <p style="margin-left: 110px;">Already a member?</p>
+    <p2 style="margin-left: 150px;"><a href = "{{url_for('auth_view.login')}}">Login</a></p2>
+</form>
+    <br><br>
+{% endblock content %}
+

@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+
+{% block title %}
+   500 - Server error
+{% endblock title %}
+
+{% block content %}
+    <h1 class="pagenotfound">An error has occured, please try again later</h1>
+    
+    <a href ="{{url_for('home_view.home')}}"></a>
+{% endblock content %}
+

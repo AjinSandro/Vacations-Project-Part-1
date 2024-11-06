@@ -1,0 +1,36 @@
+# Python
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+env/
+venv/
+ENV/
+*.egg-info/
+.eggs/
+
+# Flask specific
+instance/
+*.db
+*.sqlite3
+*.sqlite
+*.log
+
+# .env files (environment variables)
+.env
+.env.*
+*.env
+
+# IDEs and text editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Other
+*.bak
+*.tmp

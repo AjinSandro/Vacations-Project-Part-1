@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+
+<div class = "homepageintro video-background" >
+            <video autoplay muted loop>
+                <source src="static/images/backgroundocean.mp4" type="video/mp4">
+                
+            </video>
+            <div class="homecontent">
+                <div class="tm-row tm-content-row">
+                    <div class="homeintro">
+                            <h2 class="tm-color-primary tm-page-title">
+                                Introducing <span class="highlight-beach">BEACH</span> <span class="highlight-vibes">vibes</span>
+                            </h2>
+                            We're thrilled to have you here. Dive into our exclusive deals on sun-soaked getaways, and let us help you plan your perfect beach vacation. Whether you’re dreaming of white sandy shores or crystal-clear waters, we’ve got the best offers to make your escape unforgettable.
+                            <br>
+                            
+                            <div>
+                                Click 👉 <a href="{{url_for('vacations_view.list')}}"> HERE</a> 👈 to check our BEST offers!
+                            Happy travels! 🏖️🌴
+                            </div>
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                </div>
+            </div>
+                    
+                    
+</div>                
+ 
+    <footer class="tm-footer font-size: icon-spacing3">
+        Copyright &copy; Beach Vibes 2024
+    </footer>
+
+</div>
+{% endblock content %}
+
+
